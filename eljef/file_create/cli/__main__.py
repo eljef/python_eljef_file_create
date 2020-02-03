@@ -66,7 +66,6 @@ def do_print_file_types(files: DictObj) -> None:
     LOGGER.info('\nSupported File Types:')
     for key in files.keys():
         LOGGER.info("\t%s", key)
-    LOGGER.info('\n')
     raise SystemExit(0)
 
 
@@ -79,7 +78,6 @@ def do_print_license_types(licenses: DictObj) -> None:
     LOGGER.info('\nSupported License Types:')
     for key, value in licenses.items():
         LOGGER.info('\t%s: %s', key, value().description)
-    LOGGER.info('\n')
     raise SystemExit(0)
 
 
