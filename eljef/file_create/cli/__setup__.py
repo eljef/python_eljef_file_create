@@ -14,14 +14,13 @@
 # Jef Oliver <jef@eljef.me>
 #
 # __main__.py : ElJef File Create CLI Main
-"""ElJef File Create CLI Main
+"""ElJef File Create CLI Main.
 
 ElJef CLI Main file createion functionality.
 """
 
 import logging
 import os
-
 from copy import deepcopy
 
 from eljef.core import fops
@@ -31,7 +30,7 @@ LOGGER = logging.getLogger()
 
 
 def setup() -> None:
-    """Setup runs the setup routine for file_create"""
+    """Run the setup routine for file_create."""
     new_defaults = deepcopy(DEFAULTS)
     new_defaults['copyright_holder'] = input("What is the name of the default copyright holder? : ")
 

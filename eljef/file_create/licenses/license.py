@@ -16,7 +16,7 @@
 # Jef Oliver <jef@eljef.me>
 #
 # license.py : ElJef File Creation Base License Plugin
-"""ElJef File Creation Base License Plugin
+"""ElJef File Creation Base License Plugin.
 
 ElJef file creation base license plugin.
 """
@@ -27,14 +27,16 @@ LOGGER = logging.getLogger()
 
 
 class License:
-    """Base License Class that all license plugins must inherit"""
+    """Base License Class that all license plugins must inherit."""
+
     def __init__(self):
+        """Init."""
         self.description = ''
         self.name = ''
 
     @staticmethod
     def header() -> str:
-        """Returns a license header with formatters for a file type to replace.
+        """Return a license header with formatters for a file type to replace.
 
         Returns:
             A formattable string form of a license header.

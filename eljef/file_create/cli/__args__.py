@@ -14,7 +14,7 @@
 # Jef Oliver <jef@eljef.me>
 #
 # __args__.py : ElJef File Create CLI Arguments
-"""ElJef File Create CLI Arguments
+"""ElJef File Create CLI Arguments.
 
 ElJef CLI File Create command line arguments.
 """

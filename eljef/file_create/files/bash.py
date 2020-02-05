@@ -16,7 +16,7 @@
 # Jef Oliver <jef@eljef.me>
 #
 # bash.py : ElJef File Creation Bash File Plugin
-"""ElJef File Creation Bash File Plugin
+"""ElJef File Creation Bash File Plugin.
 
 ElJef file creation bash file plugin.
 """
@@ -29,19 +29,21 @@ LOGGER = logging.getLogger()
 
 
 class BashFile(File):
-    """Bash File Plugin Class
+    """Bash File Plugin Class.
 
     Args:
         data: Data to be used to create the new file
         license: License object
     """
+
     def __init__(self, data: dict, license_obj: object) -> None:
+        """Init."""
         super().__init__(data, license_obj)
         self.comment_character = '#'
         self.name = 'bash'
 
     def header(self) -> str:
-        """Returns a string to be added to the header of a file _BEFORE_ the license text
+        """Return a string to be added to the header of a file _BEFORE_ the license text.
 
         Returns:
             A formatable string
@@ -50,7 +52,7 @@ class BashFile(File):
 '''
 
     def metadata(self) -> str:
-        """Returns author and comment metadata to be written.
+        """Return author and comment metadata to be written.
 
         Returns:
             A formatable string
@@ -67,14 +69,16 @@ class BashFile(File):
 
 
 class NewBashFile(NewFile):
-    """New BashFile Plugin Class"""
+    """New BashFile Plugin Class."""
+
     def __init__(self) -> None:
+        """Init."""
         super().__init__()
         self.name = 'bash'
 
     @staticmethod
     def new(data: dict, license_obj: object) -> object:
-        """New returns the actual BashFile plugin, initialized
+        """Return the actual BashFile plugin, initialized.
 
         Args:
             data: Data to be used to create the new file

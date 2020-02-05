@@ -14,14 +14,13 @@
 # Jef Oliver <jef@eljef.me>
 #
 # __main__.py : ElJef File Create CLI Main
-"""ElJef File Create CLI Main
+"""ElJef File Create CLI Main.
 
 ElJef CLI Main file createion functionality.
 """
 
-import logging
 import argparse
-
+import logging
 
 from eljef.core import fops
 from eljef.core.applog import setup_app_logging
@@ -39,7 +38,7 @@ LOGGER = logging.getLogger()
 
 
 def do_args() -> argparse.Namespace:
-    """Returns command line arguments
+    """Return command line arguments.
 
     Returns;
         A tuple with the argument parser and parsed namespace
@@ -58,7 +57,7 @@ def do_args() -> argparse.Namespace:
 
 
 def do_print_file_types(files: DictObj) -> None:
-    """Prints the file types supported by file_create
+    """Print the file types supported by file_create.
 
     Args:
         files: The files DictObj returned from load_files_and_licenses
@@ -70,7 +69,7 @@ def do_print_file_types(files: DictObj) -> None:
 
 
 def do_print_license_types(licenses: DictObj) -> None:
-    """Prints the license types supported by file_create
+    """Print the license types supported by file_create.
 
     Args:
         licenses: The licenses DictOjb returned from load_files_and_licenses
@@ -82,20 +81,20 @@ def do_print_license_types(licenses: DictObj) -> None:
 
 
 def do_setup() -> None:
-    """Runs setup"""
+    """Run setup."""
     setup()
     LOGGER.info('defaults saved')
     raise SystemExit(0)
 
 
 def do_version() -> None:
-    """Prints the program version and exists."""
+    """Print the program version and exist."""
     LOGGER.info("%s - %s", PROJECT_NAME, PROJECT_VERSION)
     raise SystemExit(0)
 
 
 def verify_config(config: dict, args: argparse.Namespace) -> dict:
-    """Verifies needed configuration values are present.
+    """Verify needed configuration values are present.
 
     Args:
         config: dictionary of default configuration values
@@ -125,7 +124,7 @@ def verify_config(config: dict, args: argparse.Namespace) -> dict:
 
 
 def run() -> None:
-    """Runs functionality"""
+    """Run functionality."""
     # pylint: disable=global-statement
     global _DEBUG
 
@@ -165,7 +164,7 @@ def run() -> None:
 
 
 def main() -> None:
-    """Main function"""
+    """Run main functionality."""
     try:
         run()
     except KeyboardInterrupt:

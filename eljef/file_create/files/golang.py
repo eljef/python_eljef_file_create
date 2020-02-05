@@ -16,7 +16,7 @@
 # Jef Oliver <jef@eljef.me>
 #
 # golang.py : ElJef File Creation Golang File Plugin
-"""ElJef File Creation Golang File Plugin
+"""ElJef File Creation Golang File Plugin.
 
 ElJef file creation golang file plugin.
 """
@@ -29,19 +29,21 @@ LOGGER = logging.getLogger()
 
 
 class GolangFile(File):
-    """Golang File Plugin Class
+    """Golang File Plugin Class.
 
     Args:
         data: Data to be used to create the new file
         license: License object
     """
+
     def __init__(self, data: dict, license_obj: object) -> None:
+        """Init."""
         super().__init__(data, license_obj)
         self.comment_character = '//'
         self.name = 'golang'
 
     def header(self) -> str:
-        """Returns a string to be added to the header of a file _BEFORE_ the license text
+        """Return a string to be added to the header of a file _BEFORE_ the license text.
 
         Returns:
             A formatable string
@@ -49,7 +51,7 @@ class GolangFile(File):
         return ''
 
     def metadata(self) -> str:
-        """Returns author and comment metadata to be written.
+        """Return author and comment metadata to be written.
 
         Returns:
             A formatable string
@@ -61,14 +63,16 @@ package <DIR_NAME>
 
 
 class NewGolangFile(NewFile):
-    """New GolangFile Plugin Class"""
+    """New GolangFile Plugin Class."""
+
     def __init__(self) -> None:
+        """Init."""
         super().__init__()
         self.name = 'golang'
 
     @staticmethod
     def new(data: dict, license_obj: object) -> object:
-        """New returns the actual GolangFile plugin, initialized
+        """Return the actual GolangFile plugin, initialized.
 
         Args:
             data: Data to be used to create the new file

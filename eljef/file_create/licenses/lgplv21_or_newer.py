@@ -16,7 +16,7 @@
 # Jef Oliver <jef@eljef.me>
 #
 # lgplv21.py : ElJef File Creation LGPLv2.1-only License Plugin
-"""ElJef File Creation LGPLv2.1-only License Plugin
+"""ElJef File Creation LGPLv2.1-only License Plugin.
 
 ElJef file creation lgplv2.1-only license plugin.
 """
@@ -29,15 +29,17 @@ LOGGER = logging.getLogger()
 
 
 class LicenseLGPLv21OrNewer(License):
-    """LGPLv2.1-only License Class"""
+    """LGPLv2.1-only License Class."""
+
     def __init__(self):
+        """Init."""
         super().__init__()
         self.description = 'LGPLv2.1 or newer'
         self.name = 'lgplv21-or-newer'
 
     @staticmethod
     def header() -> str:
-        """Returns a license header with formatters for a file type to replace.
+        """Return a license header with formatters for a file type to replace.
 
         Returns:
             A formattable string form of a license header.

@@ -16,13 +16,13 @@
 # Jef Oliver <jef@eljef.me>
 #
 # file.py : ElJef File Creation Base File Plugin
-"""ElJef File Creation Base File Plugin
+"""ElJef File Creation Base File Plugin.
 
 ElJef file creation base file plugin.
 """
 
-import logging
 import datetime
+import logging
 import os
 import pathlib
 
@@ -32,20 +32,22 @@ LOGGER = logging.getLogger()
 
 
 class File:
-    """Base File Plugin Class that file type plugins must inherit
+    """Base File Plugin Class that file type plugins must inherit.
 
     Args:
         data: Data to be used to create the new file
         license: License object
     """
+
     def __init__(self, data: dict, license_obj: object) -> None:
+        """Init."""
         self.comment_character = ''
         self.data = data
         self.license_obj = license_obj
         self.name = ''
 
     def get_dir(self) -> str:
-        """Returns that last directory in the provided filename, or the last directory in CWD
+        """Return that last directory in the provided filename, or the last directory in CWD.
 
         Returns
             Last directory in provided file path or last directory in CWD
@@ -54,7 +56,7 @@ class File:
         return path.parent.name
 
     def header(self) -> str:
-        """Returns a string to be added to the header of a file _BEFORE_ the license text
+        """Return a string to be added to the header of a file _BEFORE_ the license text.
 
         Returns:
             A formatable string
@@ -62,7 +64,7 @@ class File:
         raise NotImplementedError
 
     def metadata(self) -> str:
-        """Returns author and comment metadata to be written.
+        """Return author and comment metadata to be written.
 
         Returns:
             A formatable string
@@ -70,7 +72,7 @@ class File:
         raise NotImplementedError
 
     def write(self) -> None:
-        """Writes license to new file"""
+        """Write license to new file."""
         data = self.header()
         data += self.license_obj.header()
 
@@ -95,13 +97,15 @@ class File:
 
 
 class NewFile:
-    """Base New File Plugin Class that all new file plugins must inherit"""
+    """Base New File Plugin Class that all new file plugins must inherit."""
+
     def __init__(self) -> None:
+        """Init."""
         self.type = ''
 
     @staticmethod
     def new(data: dict, license_obj: object) -> object:
-        """New returns the actual File plugin, initialized
+        """Return the actual File plugin, initialized.
 
         Args:
             data: Data to be used to create the new file

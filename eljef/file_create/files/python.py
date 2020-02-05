@@ -16,7 +16,7 @@
 # Jef Oliver <jef@eljef.me>
 #
 # python.py : ElJef File Creation Python File Plugin
-"""ElJef File Creation Python File Plugin
+"""ElJef File Creation Python File Plugin.
 
 ElJef file creation python file plugin.
 """
@@ -29,19 +29,21 @@ LOGGER = logging.getLogger()
 
 
 class PythonFile(File):
-    """Python File Plugin Class
+    """Python File Plugin Class.
 
     Args:
         data: Data to be used to create the new file
         license: License object
     """
+
     def __init__(self, data: dict, license_obj: object) -> None:
+        """Init."""
         super().__init__(data, license_obj)
         self.comment_character = '#'
         self.name = 'python'
 
     def header(self) -> str:
-        """Returns a string to be added to the header of a file _BEFORE_ the license text
+        """Return a string to be added to the header of a file _BEFORE_ the license text.
 
         Returns:
             A formatable string
@@ -51,7 +53,7 @@ class PythonFile(File):
 '''
 
     def metadata(self) -> str:
-        """Returns author and comment metadata to be written.
+        """Return author and comment metadata to be written.
 
         Returns:
             A formatable string
@@ -81,14 +83,16 @@ LOGGER = logging.getLogger()
 
 
 class NewPythonFile(NewFile):
-    """New PythonFile Plugin Class"""
+    """New PythonFile Plugin Class."""
+
     def __init__(self) -> None:
+        """Init."""
         super().__init__()
         self.name = 'python'
 
     @staticmethod
     def new(data: dict, license_obj: object) -> object:
-        """New returns the actual PythonFile plugin, initialized
+        """Return the actual PythonFile plugin, initialized.
 
         Args:
             data: Data to be used to create the new file

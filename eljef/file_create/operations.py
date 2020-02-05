@@ -14,7 +14,7 @@
 # Jef Oliver <jef@eljef.me>
 #
 # operations.py : ElJef File Create Common Operations
-"""ElJef File Create Common Operations
+"""ElJef File Create Common Operations.
 
 Operations common to all file creation functionality.
 """
@@ -22,7 +22,6 @@ Operations common to all file creation functionality.
 import inspect
 import logging
 import pkgutil
-
 from typing import Tuple
 
 from eljef.core.dictobj import DictObj
@@ -33,7 +32,7 @@ LOGGER = logging.getLogger(__name__)
 
 
 def load_plugins(plugin_path: str, from_list: list, base_class: object) -> DictObj:
-    """Loads plugins
+    """Load plugins.
 
     Args:
         plugin_path: Python path to the plugins directory
@@ -57,7 +56,7 @@ def load_plugins(plugin_path: str, from_list: list, base_class: object) -> DictO
 
 
 def load_files_and_licenses() -> Tuple[DictObj, DictObj]:
-    """Loads file and license plugins
+    """Load file and license plugins.
 
     Returns:
         Tuple of Dictobj: plugin name -> plugins

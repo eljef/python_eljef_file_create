@@ -16,7 +16,7 @@
 # Jef Oliver <jef@eljef.me>
 #
 # no_license.py : ElJef File Creation No License Plugin
-"""ElJef File Creation No License Plugin
+"""ElJef File Creation No License Plugin.
 
 ElJef file creation no license plugin.
 """
@@ -29,15 +29,17 @@ LOGGER = logging.getLogger()
 
 
 class LicenseFile(License):
-    """License File License Class"""
+    """License File License Class."""
+
     def __init__(self):
+        """Init."""
         super().__init__()
         self.description = 'No license header.'
         self.name = 'no-license'
 
     @staticmethod
     def header() -> str:
-        """Returns a license header with formatters for a file type to replace.
+        """Return a license header with formatters for a file type to replace.
 
         Returns:
             A formattable string form of a license header.

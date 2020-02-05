@@ -16,7 +16,7 @@
 # Jef Oliver <jef@eljef.me>
 #
 # liceense_file.py : ElJef File Creation License File License Plugin
-"""ElJef File Creation License File License Plugin
+"""ElJef File Creation License File License Plugin.
 
 ElJef file creation license file license plugin.
 """
@@ -29,15 +29,17 @@ LOGGER = logging.getLogger()
 
 
 class LicenseFile(License):
-    """License File License Class"""
+    """License File License Class."""
+
     def __init__(self):
+        """Init."""
         super().__init__()
         self.description = 'License header prompting reader to view LICENSE file for license.'
         self.name = 'license-file'
 
     @staticmethod
     def header() -> str:
-        """Returns a license header with formatters for a file type to replace.
+        """Return a license header with formatters for a file type to replace.
 
         Returns:
             A formattable string form of a license header.

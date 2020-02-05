@@ -16,7 +16,7 @@
 # Jef Oliver <jef@eljef.me>
 #
 # bsd_3_clause.py : ElJef File Creation BSD 3-Clause License Plugin
-"""ElJef File Creation BSD 3-Clause License Plugin
+"""ElJef File Creation BSD 3-Clause License Plugin.
 
 ElJef file creation bsd 3-clause license plugin.
 """
@@ -29,15 +29,17 @@ LOGGER = logging.getLogger()
 
 
 class BSD3Clause(License):
-    """BSD 3-Clause License Class"""
+    """BSD 3-Clause License Class."""
+
     def __init__(self):
+        """Init."""
         super().__init__()
         self.description = 'BSD 3-Clause'
         self.name = 'bsd-3-clause'
 
     @staticmethod
     def header() -> str:
-        """Returns a license header with formatters for a file type to replace.
+        """Return a license header with formatters for a file type to replace.
 
         Returns:
             A formattable string form of a license header.

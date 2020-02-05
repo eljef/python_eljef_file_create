@@ -14,13 +14,12 @@
 # Jef Oliver <jef@eljef.me>
 #
 # __vars__.py : Variables used by ElJef File Create CLI
-"""ElJef File Create CLI Variables
+"""ElJef File Create CLI Variables.
 
 Variables used by ElJef File Creation CLI.
 """
 import logging
 import os
-
 from pathlib import Path
 
 from eljef.file_create.__version__ import VERSION
