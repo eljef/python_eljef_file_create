@@ -130,11 +130,11 @@ def run() -> None:
 
     args = do_args()
 
-    if args.version_out:
-        do_version()
-
     _DEBUG = args.debug_log
     setup_app_logging(args.debug_log)
+
+    if args.version_out:
+        do_version()
 
     if args.setup:
         do_setup()
@@ -174,7 +174,7 @@ def main() -> None:
         if _DEBUG:
             raise
 
-        LOGGER.Error(exception_object)
+        LOGGER.error(exception_object)
 
 
 if __name__ == '__main__':
