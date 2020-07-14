@@ -36,7 +36,7 @@ class File:
 
     Args:
         data: Data to be used to create the new file
-        license: License object
+        license_obj: License object
     """
 
     def __init__(self, data: dict, license_obj: object) -> None:
@@ -45,6 +45,7 @@ class File:
         self.data = data
         self.license_obj = license_obj
         self.name = ''
+        self.text_only = False
 
     def get_dir(self) -> str:
         """Return that last directory in the provided filename, or the last directory in CWD.
@@ -73,12 +74,15 @@ class File:
 
     def write(self) -> None:
         """Write license to new file."""
-        data = self.header()
-        data += self.license_obj.header()
+        if not self.text_only:
+            data = self.header()
+            data += self.license_obj.header()
 
-        data_add = self.metadata()
-        if data_add:
-            data += data_add
+            data_add = self.metadata()
+            if data_add:
+                data += data_add
+        else:
+            data = self.license_obj.text()
 
         data = data.replace('<#>', self.comment_character, -1)
         data = data.replace('<AUTHOR>', self.data.get('author', ''), -1)
@@ -109,7 +113,7 @@ class NewFile:
 
         Args:
             data: Data to be used to create the new file
-            license: License object
+            license_obj: License object
 
         Notes:
             Example:

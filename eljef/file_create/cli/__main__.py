@@ -16,7 +16,7 @@
 # __main__.py : ElJef File Create CLI Main
 """ElJef File Create CLI Main.
 
-ElJef CLI Main file createion functionality.
+ElJef CLI Main file creation functionality.
 """
 
 import argparse

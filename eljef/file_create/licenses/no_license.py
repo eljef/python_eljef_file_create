@@ -42,6 +42,11 @@ class LicenseFile(License):
         """Return a license header with formatters for a file type to replace.
 
         Returns:
-            A formattable string form of a license header.
+            A formatable string form of a license header.
         """
+        return ''
+
+    @staticmethod
+    def text() -> str:
+        """Return a license text to be used in a LICENSE file."""
         return ''

@@ -15,7 +15,7 @@
 # Authors:
 # Jef Oliver <jef@eljef.me>
 #
-# liceense_file.py : ElJef File Creation License File License Plugin
+# license_file.py : ElJef File Creation License File License Plugin
 """ElJef File Creation License File License Plugin.
 
 ElJef file creation license file license plugin.
@@ -42,9 +42,14 @@ class LicenseFile(License):
         """Return a license header with formatters for a file type to replace.
 
         Returns:
-            A formattable string form of a license header.
+            A formatable string form of a license header.
         """
         return '''<#> Copyright (C) <YEAR> <COPYRIGHT HOLDER>. All rights reserved.
 <#> Use of this source code is governed by a license
 <#> that can be found in the LICENSE file.
 '''
+
+    @staticmethod
+    def text() -> str:
+        """Return a license text to be used in a LICENSE file."""
+        return ''

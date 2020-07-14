@@ -33,7 +33,7 @@ class BashFile(File):
 
     Args:
         data: Data to be used to create the new file
-        license: License object
+        license_obj: License object
     """
 
     def __init__(self, data: dict, license_obj: object) -> None:
@@ -82,6 +82,6 @@ class NewBashFile(NewFile):
 
         Args:
             data: Data to be used to create the new file
-            license: License object
+            license_obj: License object
         """
         return BashFile(data, license_obj)
