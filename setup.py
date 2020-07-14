@@ -14,7 +14,7 @@ setup(
               'eljef.file_create.licenses'],
     python_requires='>=3.8',
     url='https://github.com/eljef/python_eljef_file_create',
-    version='0.2.0',
+    version='0.2.1',
     zip_safe=False,
     entry_points={
         'console_scripts': [
